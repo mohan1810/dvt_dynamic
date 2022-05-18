@@ -1,0 +1,53 @@
+{
+    "result_handler": {
+         "project_id": "payoneer-prod-eu-svc-data-016f",
+         "table_id": "Data_Validation.results",
+         "type": "BigQuery",
+         "google_service_account_key_path": "./payoneer-prod-eu-svc-data-016f-dvtservice.json"
+     },
+     "source_conn": {
+         "source_type": "BigQuery",
+         "project_id": "payoneer-prod-eu-svc-data-016f",
+         "google_service_account_key_path": "./payoneer-prod-eu-svc-data-016f-dvtservice.json"
+     },
+     "target_conn": {
+         "source_type": "BigQuery",
+         "project_id": "payoneer-prod-eu-svc-data-016f",
+         "google_service_account_key_path": "./payoneer-prod-eu-svc-data-016f-dvtservice.json"
+     },
+     "comparison_fields": [
+         {
+             "cast": null,
+             "field_alias": "IVR_Rule_ID",
+             "source_column": "ivr_rule_id",
+             "target_column": "ivr_rule_id"
+         },
+         {
+             "cast": null,
+             "field_alias": "IVR_Rule_Description",
+             "source_column": "ivr_rule_description",
+             "target_column": "ivr_rule_description"
+         },
+         {
+             "cast": null,
+             "field_alias": "RI_Ind",
+             "source_column": "ri_ind",
+             "target_column": "ri_ind"
+         }
+     ],
+     "primary_keys": [
+         {
+             "cast": null,
+             "field_alias": "IVR_Rule_ID",
+             "source_column": "IVR_Rule_ID",
+             "target_column": "IVR_Rule_ID"
+         }
+     ],
+     "format": "table",
+     "schema_name": "DW_Operations",
+     "table_name": "DIM_IVR_Rules",
+     "target_schema_name": "DW_Operations",
+     "target_table_name": "DIM_IVR_Rules_GCP",
+     "threshold": 0,
+     "type": "Row"
+ }

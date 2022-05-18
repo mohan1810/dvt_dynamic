@@ -1,0 +1,201 @@
+{
+    "result_handler": {
+         "project_id": "payoneer-prod-eu-svc-data-016f",
+         "table_id": "Data_Validation.results",
+         "type": "BigQuery",
+         "google_service_account_key_path": "./payoneer-prod-eu-svc-data-016f-dvtservice.json"
+     },
+     "source_conn": {
+         "source_type": "BigQuery",
+         "project_id": "payoneer-prod-eu-svc-data-016f",
+         "google_service_account_key_path": "./payoneer-prod-eu-svc-data-016f-dvtservice.json"
+     },
+     "target_conn": {
+         "source_type": "BigQuery",
+         "project_id": "payoneer-prod-eu-svc-data-016f",
+         "google_service_account_key_path": "./payoneer-prod-eu-svc-data-016f-dvtservice.json"
+     },
+     "calculated_fields": [
+         {
+             "depth": 0,
+             "field_alias": "cast__IVR_Rule_ID",
+             "source_calculated_columns": [
+                 "IVR_Rule_ID"
+             ],
+             "target_calculated_columns": [
+                 "IVR_Rule_ID"
+             ],
+             "type": "cast"
+         },
+         {
+             "depth": 0,
+             "field_alias": "cast__IVR_Rule_Description",
+             "source_calculated_columns": [
+                 "IVR_Rule_Description"
+             ],
+             "target_calculated_columns": [
+                 "IVR_Rule_Description"
+             ],
+             "type": "cast"
+         },
+         {
+             "depth": 0,
+             "field_alias": "cast__RI_Ind",
+             "source_calculated_columns": [
+                 "RI_Ind"
+             ],
+             "target_calculated_columns": [
+                 "RI_Ind"
+             ],
+             "type": "cast"
+         },
+         {
+             "depth": 1,
+             "field_alias": "ifnull__cast__IVR_Rule_ID",
+             "source_calculated_columns": [
+                 "cast__IVR_Rule_ID"
+             ],
+             "target_calculated_columns": [
+                 "cast__IVR_Rule_ID"
+             ],
+             "type": "ifnull"
+         },
+         {
+             "depth": 1,
+             "field_alias": "ifnull__cast__IVR_Rule_Description",
+             "source_calculated_columns": [
+                 "cast__IVR_Rule_Description"
+             ],
+             "target_calculated_columns": [
+                 "cast__IVR_Rule_Description"
+             ],
+             "type": "ifnull"
+         },
+         {
+             "depth": 1,
+             "field_alias": "ifnull__cast__RI_Ind",
+             "source_calculated_columns": [
+                 "cast__RI_Ind"
+             ],
+             "target_calculated_columns": [
+                 "cast__RI_Ind"
+             ],
+             "type": "ifnull"
+         },
+         {
+             "depth": 2,
+             "field_alias": "rstrip__ifnull__cast__IVR_Rule_ID",
+             "source_calculated_columns": [
+                 "ifnull__cast__IVR_Rule_ID"
+             ],
+             "target_calculated_columns": [
+                 "ifnull__cast__IVR_Rule_ID"
+             ],
+             "type": "rstrip"
+         },
+         {
+             "depth": 2,
+             "field_alias": "rstrip__ifnull__cast__IVR_Rule_Description",
+             "source_calculated_columns": [
+                 "ifnull__cast__IVR_Rule_Description"
+             ],
+             "target_calculated_columns": [
+                 "ifnull__cast__IVR_Rule_Description"
+             ],
+             "type": "rstrip"
+         },
+         {
+             "depth": 2,
+             "field_alias": "rstrip__ifnull__cast__RI_Ind",
+             "source_calculated_columns": [
+                 "ifnull__cast__RI_Ind"
+             ],
+             "target_calculated_columns": [
+                 "ifnull__cast__RI_Ind"
+             ],
+             "type": "rstrip"
+         },
+         {
+             "depth": 3,
+             "field_alias": "upper__rstrip__ifnull__cast__IVR_Rule_ID",
+             "source_calculated_columns": [
+                 "rstrip__ifnull__cast__IVR_Rule_ID"
+             ],
+             "target_calculated_columns": [
+                 "rstrip__ifnull__cast__IVR_Rule_ID"
+             ],
+             "type": "upper"
+         },
+         {
+             "depth": 3,
+             "field_alias": "upper__rstrip__ifnull__cast__IVR_Rule_Description",
+             "source_calculated_columns": [
+                 "rstrip__ifnull__cast__IVR_Rule_Description"
+             ],
+             "target_calculated_columns": [
+                 "rstrip__ifnull__cast__IVR_Rule_Description"
+             ],
+             "type": "upper"
+         },
+         {
+             "depth": 3,
+             "field_alias": "upper__rstrip__ifnull__cast__RI_Ind",
+             "source_calculated_columns": [
+                 "rstrip__ifnull__cast__RI_Ind"
+             ],
+             "target_calculated_columns": [
+                 "rstrip__ifnull__cast__RI_Ind"
+             ],
+             "type": "upper"
+         },
+         {
+             "depth": 4,
+             "field_alias": "concat__all",
+             "source_calculated_columns": [
+                 "upper__rstrip__ifnull__cast__IVR_Rule_ID",
+                 "upper__rstrip__ifnull__cast__IVR_Rule_Description",
+                 "upper__rstrip__ifnull__cast__RI_Ind"
+             ],
+             "target_calculated_columns": [
+                 "upper__rstrip__ifnull__cast__IVR_Rule_ID",
+                 "upper__rstrip__ifnull__cast__IVR_Rule_Description",
+                 "upper__rstrip__ifnull__cast__RI_Ind"
+             ],
+             "type": "concat"
+         },
+         {
+             "depth": 5,
+             "field_alias": "hash__all",
+             "source_calculated_columns": [
+                 "concat__all"
+             ],
+             "target_calculated_columns": [
+                 "concat__all"
+             ],
+             "type": "hash"
+         }
+     ],
+     "comparison_fields": [
+         {
+             "cast": null,
+             "field_alias": "hash__all",
+             "source_column": "hash__all",
+             "target_column": "hash__all"
+         }
+     ],
+     "primary_keys": [
+         {
+             "cast": null,
+             "field_alias": "IVR_Rule_ID",
+             "source_column": "IVR_Rule_ID",
+             "target_column": "IVR_Rule_ID"
+         }
+     ],
+     "format": "table",
+     "schema_name": "DW_Operations",
+     "table_name": "DIM_IVR_Rules",
+     "target_schema_name": "DW_Operations",
+     "target_table_name": "DIM_IVR_Rules_GCP",
+     "threshold": 0,
+     "type": "Row"
+ }
